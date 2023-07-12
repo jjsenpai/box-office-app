@@ -1,8 +1,17 @@
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Home from './pages/Home';
+import Starred from './pages/Starred';
+import NoMatch from './pages/NoMatch';
+
 function App() {
   return (
-    <div>
-      Sample
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/starred" element = {<Starred />}/>
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
