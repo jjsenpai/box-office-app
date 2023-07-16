@@ -8,3 +8,6 @@ const getApi = async query => {
 
 export const searchForShows = searchQuery =>
   getApi(`/search/shows?q=${searchQuery}`);
+
+export const searchForActors = searchQuery =>
+  getApi(`/search/people?q=${searchQuery}`);
