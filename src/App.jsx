@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Starred from './pages/Starred';
 import NoMatch from './pages/NoMatch';
 import MainLayout from './components/MainLayout';
+import ShowPage from './pages/ShowPage';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/starred" element={<Starred />} />
-          <Route path="*" element={<NoMatch />} />
         </Route>
+        <Route path="/show/:showId" element={<ShowPage />} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </BrowserRouter>
   );
