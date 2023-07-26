@@ -12,4 +12,5 @@ export const searchForShows = searchQuery =>
 export const searchForActors = searchQuery =>
   getApi(`/search/people?q=${searchQuery}`);
 
-export const showById = searchQuery => getApi(`/shows/${searchQuery}`);
+export const showById = searchQuery =>
+  getApi(`/shows/${searchQuery}?embed[]=seasons&embed[]=cast`);
