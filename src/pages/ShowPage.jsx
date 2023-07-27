@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { showById } from '../API/tvmaze';
 import { useQuery } from '@tanstack/react-query';
 import ShowFocused from '../components/shows/ShowFocused';
@@ -23,6 +23,7 @@ const ShowPage = () => {
   if (showData) {
     return (
       <div>
+        <Link to={'/'}>Home</Link>
         <ShowFocused
           name={showData.name}
           image={showData.image}
@@ -31,7 +32,6 @@ const ShowPage = () => {
           genres={showData.genres}
         />
         <ShowFocusedDetails
-          seasons={showData._embedded.seasons}
           premiered={showData.premiered}
           status={showData.status}
           network={showData.network}
@@ -49,7 +49,7 @@ const ShowPage = () => {
     );
   }
 
-  return <div>This is show {showId}</div>;
+  return <div>Loading .... </div>;
 };
 
 export default ShowPage;
