@@ -14,3 +14,12 @@ export const searchForActors = searchQuery =>
 
 export const showById = searchQuery =>
   getApi(`/shows/${searchQuery}?embed[]=seasons&embed[]=cast`);
+
+export const getShowsByIds = async searchQueryArray => {
+  const promises = searchQueryArray.map(searchQuery =>
+    getApi(`/shows/${searchQuery}`)
+  );
+  const result = await Promise.all(promises);
+  console.log(result);
+  return result;
+};

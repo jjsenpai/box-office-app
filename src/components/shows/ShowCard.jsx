@@ -2,7 +2,6 @@ const ShowCard = ({ name, id, image, summary, onStarMeClick, isStarred }) => {
   return (
     <div>
       <h1>{name}</h1>
-      <div>#{id}</div>
       <img src={image}></img>
       <div>
         <a href={`/show/${id}`} target="_blank" rel="noreferrer">
